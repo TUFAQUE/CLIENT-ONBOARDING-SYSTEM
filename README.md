@@ -1,108 +1,125 @@
-🤖 AI Automation Client Onboarding Agent – n8n Workflow
-Welcome to the AI Automation Client Onboarding Agent – a powerful no-code/low-code workflow built on n8n that automates and streamlines the entire client onboarding process for digital service agencies.
+# 🤖 AI-Powered Client Onboarding Workflow (n8n + GPT-4o)
 
-📌 What Is This AI Agent?
-This n8n-based AI agent automates the end-to-end onboarding process for new clients, making it fast, scalable, and error-free.
+A fully automated AI onboarding agent built with [n8n](https://n8n.io), OpenAI (GPT-4o), Google Drive, ClickUp, Slack, and Gmail. This workflow handles everything from proposal upload to task assignment — with no manual steps needed.
 
-✨ Key Features:
-📥 Accepts client onboarding form submissions
+---
 
-📁 Automatically creates structured folders in Google Drive
+## 🚀 What It Does
 
-🧠 Extracts tasks from proposals using GPT-4o via OpenAI
+1. **Client Submission Form**  
+   - Collects name, email, company name, website, and scoping document via form.
 
-✅ Parses and breaks down proposals into 20–30 detailed subtasks
+2. **AI-Powered Task Breakdown**  
+   - Uses OpenAI GPT-4o to analyze the uploaded PDF proposal.
+   - Breaks it into 20–30 actionable subtasks with estimated due dates.
 
-📋 Instantly populates a ClickUp project (folders, lists, tasks)
+3. **ClickUp Project Automation**  
+   - Creates folder and list in ClickUp.
+   - Automatically adds all AI-generated tasks to the client project.
 
-💬 Creates dedicated Slack channels and sends welcome messages
+4. **Google Drive Folder Setup**  
+   - Creates a dedicated Google Drive folder for shared documents.
 
-📧 Sends onboarding emails to new clients with all necessary links
+5. **Slack Channel Creation**  
+   - Auto-creates a Slack channel and posts a personalized welcome message.
 
-💡 Why This Agent?
-Manual onboarding involves:
+6. **Personalized Welcome Email**  
+   - Sends a Gmail welcome email to the client with:
+     - Google Drive link
+     - Onboarding call scheduler
+     - Slack + ClickUp instructions
 
-Repetitive tasks across tools (Slack, Google Drive, ClickUp)
+---
 
-Human errors while copying tasks or setting due dates
+## 🎯 Why Use This?
 
-Wasted hours on admin tasks instead of building value
+Manual onboarding takes time, introduces inconsistencies, and distracts your team from strategic work.  
+This agent helps you:
 
-This agent fixes all that with fully automated onboarding in seconds!
+- Onboard clients in **under 2 minutes**
+- Automate multi-tool setup (Drive, Slack, ClickUp)
+- Deliver a premium onboarding experience at scale
+- Eliminate human errors and task duplication
 
-🚀 How to Set It Up
-✅ Prerequisites
-n8n self-hosted or cloud instance
+---
 
-Accounts & credentials for:
+## 🔧 APIs & Services Used
 
-Google Drive
+| Service         | Purpose                                |
+|----------------|----------------------------------------|
+| OpenAI GPT-4o   | Break down proposals into tasks        |
+| Google Drive API| Create shared client folder            |
+| ClickUp API     | Create folders, lists, and tasks       |
+| Slack API       | Create client communication channel    |
+| Gmail API       | Send onboarding emails                 |
+| n8n             | Workflow orchestration engine          |
 
-Slack
+---
 
-ClickUp
+## 🛠️ Setup Instructions
 
-OpenAI (GPT-4o / GPT-4o-mini)
+1. **Import the Workflow**  
+   Download the `.json` and import it into your [n8n instance](https://docs.n8n.io/hosting/installation/).
 
-🔧 Required API Integrations
-Tool	API/Token Needed	Scopes / Notes
-Google Drive	OAuth2	Folder creation permission, Drive ID access
-Slack	OAuth2	Scopes: channels:write, chat:write, users:read.email
-ClickUp	OAuth2 or API Token	Folder, list, and task creation permissions
-OpenAI	API Key (via n8n Langchain plugin)	GPT-4o / GPT-4o-mini support
+2. **Connect All Credentials**  
+   - Google Drive OAuth2  
+   - ClickUp OAuth2  
+   - Slack Bot Token (OAuth2)  
+   - Gmail OAuth2  
+   - OpenAI API Key
 
-📥 Form Fields Expected
-The agent is triggered by a form submission, which must include the following fields:
+3. **Update IDs**  
+   - Replace the parent folder ID in Google Drive node.  
+   - Set your actual ClickUp space, team, and template IDs.  
+   - Link your onboarding form and calendar link (e.g., OnceHub or Cal.com).
 
-Name
+4. **Deploy and Share the Form**  
+   - Embed or send the client onboarding form.
+   - Sit back and let automation take over!
 
-Email
+---
 
-Company Name
+## 🧩 Input Form Fields
 
-Website
+The agent expects these fields from the form:
 
-Proposal/Scope Document (PDF)
+- **Name**  
+- **Email**  
+- **Company Name**  
+- **Website**  
+- **Proposal / Scope Document** (PDF)
 
-🧠 AI-Powered Task Breakdown (GPT-4o)
-Using LangChain with GPT-4o:
+---
 
-Reads the proposal/scoping document
+## 🧠 Sample Output Tasks (From GPT-4o)
 
-Extracts detailed task list with due dates
+> "Initial strategy alignment call and documentation setup expected within first 3 days."
 
-Feeds tasks directly into ClickUp
+| Task Title                  | Description                                                  | Due Date     |
+|----------------------------|--------------------------------------------------------------|--------------|
+| Book Strategy Call          | Coordinate & schedule a kickoff call with the client         | MM/DD/YYYY   |
+| Create Strategy Notes Doc   | Prepare shared doc to collect meeting notes                  | MM/DD/YYYY   |
+| Create Project Workspace    | Set up access to Slack, ClickUp, Google Drive                | MM/DD/YYYY   |
 
-Supports up to 30 granular tasks for precise onboarding
+*...and up to 30 similar detailed tasks generated.*
 
-🛠️ Running the Agent
-Import the Workflow into your n8n instance
+---
 
-Set up credentials for:
+## 👨‍💻 Developed By
 
-Google Drive
+**Tufaque Sayyed**  
+AI/ML Engineer | Automation Specialist  
+🌐 [Portfolio](https://tufaquesayyed.vercel.app)  
+🔗 [LinkedIn](https://www.linkedin.com/in/tufaque-sayyed-843596364/)
 
-Slack
+---
 
-ClickUp
+## 📄 License
 
-OpenAI
+MIT – Feel free to use, fork, and customize this agent for your business.  
+If it helps, leave a ⭐ on the repo!
 
-Deploy the form (can be embedded on your website or accessed via a webhook)
 
-Trigger the form by submitting sample data
-
-Watch the automation magic unfold ✨
-
-🗂️ Workflow Actions Summary
-Step	Action
-1️⃣	Triggered by form submission
-2️⃣	Extracts data from uploaded proposal (PDF)
-3️⃣	AI parses the document into 20–30 tasks
-4️⃣	Google Drive folder is created
-5️⃣	ClickUp folder, list, and tasks created
-6️⃣	Slack channel created and welcome message sent
-7️⃣	Welcome email sent to the client with links
 
 👨‍💻 Developed By
 Tufaque Sayyed
