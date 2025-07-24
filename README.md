@@ -108,7 +108,7 @@ The agent expects these fields from the form:
 ## 👨‍💻 Developed By
 
 **Tufaque Sayyed**  
-AI/ML Engineer | Automation Specialist  
+AI/ML Engineer | Data Scientist 
 🌐 [Portfolio](https://tufaquesayyed.vercel.app)  
 🔗 [LinkedIn](https://www.linkedin.com/in/tufaque-sayyed-843596364/)
 
@@ -123,6 +123,6 @@ If it helps, leave a ⭐ on the repo!
 
 👨‍💻 Developed By
 Tufaque Sayyed
-AI & ML Engineer | Data Scientist | Web Developer
+AI & ML Engineer | Data Scientist | Ai Agent Builder 
 🌐 Portfolio
 🔗 LinkedIn
